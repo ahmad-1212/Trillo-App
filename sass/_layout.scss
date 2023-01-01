@@ -1,0 +1,138 @@
+.container {
+  max-width: 120rem;
+  margin: 8rem auto;
+  background-color: $color-grey-light-1;
+  min-height: 50rem;
+  box-shadow: $shadow-dark;
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  grid-template-rows: 7rem minmax(50rem, auto);
+
+  // grid-template-areas:
+  //   "head head"
+  //   "side main ";
+
+  @media only screen and (max-width: $bp-large) {
+    max-width: 100%;
+    margin: 0;
+  }
+
+  @media only screen and (max-width: $bp-medium) {
+    grid-template-rows: 11rem min-content minmax(50rem, auto);
+  }
+}
+
+.header {
+  grid-column: 1 / -1;
+  grid-row: 1 / span 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+
+  @media only screen and (max-width: $bp-small) {
+    flex-wrap: wrap;
+    align-content: space-around;
+  }
+}
+
+.sidebar {
+  grid-column: 1 / span 1;
+  grid-row: 2 / -1;
+  background-color: $color-grey-dark-1;
+  display: flex;
+  flex-direction: column;
+
+  @media only screen and (max-width: $bp-medium) {
+    grid-column: 1 / -1;
+    grid-row: 2 / span 1;
+  }
+}
+
+.main {
+  grid-column: 2 / -1;
+  grid-row: 2 / -1;
+
+  @media only screen and (max-width: $bp-medium) {
+    grid-column: 1 / -1;
+    grid-row: 3 / -1;
+  }
+}
+
+.details {
+  padding: 4rem;
+  background-color: $color-grey-light-2;
+  display: grid;
+  grid-template-columns: 2fr 1.2fr;
+  grid-template-rows: repeat(3, auto);
+  gap: 4rem;
+
+  @media only screen and (max-width: $bp-large) {
+    gap: 3rem;
+    padding: 3rem;
+  }
+
+  @media only screen and (max-width: $bp-small) {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, minmax(min-content, auto));
+  }
+
+  & .description {
+    grid-column: 1 / span 1;
+    grid-row: 1 / span 3;
+    box-shadow: $shadow-light;
+    background-color: #fff;
+    padding: 3rem;
+    align-self: start;
+    padding-bottom: 4.5rem;
+
+    @media only screen and (max-width: $bp-large) {
+      padding: 2.5rem;
+    }
+
+    @media only screen and (max-width: $bp-small) {
+      grid-column: 1 / -1;
+      grid-row: 1 / span 1;
+    }
+  }
+
+  & .user-review--1 {
+    grid-column: 2 / -1;
+    grid-row: 1 / span 1;
+    box-shadow: $shadow-light;
+    background-color: #fff;
+
+    @media only screen and (max-width: $bp-small) {
+      grid-column: 1 / -1;
+      grid-row: 2 / span 1;
+    }
+  }
+
+  & .user-review--2 {
+    grid-column: 2 / -1;
+    grid-row: 2 / span 1;
+    box-shadow: $shadow-light;
+    background-color: #fff;
+
+    @media only screen and (max-width: $bp-small) {
+      grid-column: 1 / -1;
+      grid-row: 3 / span 1;
+    }
+  }
+
+  & .show-reviews--btn {
+    grid-column: 2 / -1;
+    grid-row: 3 / span 1;
+    background-color: transparent;
+    justify-self: center;
+
+    @media only screen and (max-width: $bp-small) {
+      grid-column: 1 / -1;
+      grid-row: 4 / span 1;
+    }
+  }
+}
+
+.booking {
+  padding: 2rem 0;
+}
