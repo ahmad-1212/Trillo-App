@@ -115,6 +115,18 @@ body {
     font-size: 1rem;
     top: 15px;
     right: 10px; }
+    @media only screen and (max-width: 75em) {
+      .user-nav__notification {
+        top: 14px;
+        right: 6px; } }
+    @media only screen and (max-width: 56.25em) {
+      .user-nav__notification {
+        top: 28px;
+        right: 6px; } }
+    @media only screen and (max-width: 40.62em) {
+      .user-nav__notification {
+        top: 0;
+        right: 7px; } }
   .user-nav__icon {
     width: 2.5rem;
     height: 2.5rem;

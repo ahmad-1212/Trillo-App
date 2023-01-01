@@ -109,6 +109,20 @@
     font-size: 1rem;
     top: 15px;
     right: 10px;
+
+    @media only screen and (max-width: $bp-large) {
+      top: 14px;
+      right: 6px;
+    }
+
+    @media only screen and (max-width: $bp-medium) {
+      top: 28px;
+      right: 6px;
+    }
+    @media only screen and (max-width: $bp-small) {
+      top: 0;
+      right: 7px;
+    }
   }
 
   &__icon {
